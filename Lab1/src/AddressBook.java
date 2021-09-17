@@ -3,18 +3,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AddressBook {
-    List<BuddyInfo> book = new ArrayList<>();
-    public static void main(String[] args) {
-        System.out.println("Address Book");
+    List<BuddyInfo> book;
+
+    public AddressBook() {
+        this.book = new ArrayList<>();
     }
 
-    public List<BuddyInfo> addBuddy(List<BuddyInfo> arr, String name, String address, int phoneNum) {
-        BuddyInfo temp = new BuddyInfo(name, address,phoneNum);
-        arr.add(temp);
-        return arr;
+    public static void main(String[] args) {
+        System.out.println("Address Book");
+        BuddyInfo ish = new BuddyInfo("ish","Ottawa",911);
+        AddressBook booky = new AddressBook();
+        booky.addBuddy(ish);
+        booky.removeBuddy(ish);
+
     }
-    public List<BuddyInfo> removeBuddy(List<BuddyInfo> arr, int index) {
-        arr.remove(index);
-        return arr;
+
+    public List<BuddyInfo> addBuddy(BuddyInfo tempInfo) {
+        this.book.add(tempInfo);
+        return this.book;
+    }
+    public List<BuddyInfo> removeBuddy(BuddyInfo tempInfo) {
+        this.book.remove(tempInfo);
+        return this.book;
     }
 }
