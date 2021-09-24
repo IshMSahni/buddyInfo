@@ -22,6 +22,9 @@ public class AddressBook {
         this.book.add(tempInfo);
         return this.book;
     }
+    public void addBuddy(BuddyInfo tempInfo) {
+        System.out.println("came from new branch");
+    }
     public List<BuddyInfo> removeBuddy(BuddyInfo tempInfo) {
         this.book.remove(tempInfo);
         return this.book;
